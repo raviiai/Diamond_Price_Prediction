@@ -1,14 +1,53 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diamond Prediction app</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diamond Price Prediction Form</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+          body {
+            background-image: url("data:image/png;base64,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");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+          background-size: 100% 100%;
+          }
+     </style>
 </head>
 <body>
-    <h1>Welcome to Home Page</h1>
-    <h2>Diamond Price Prediction</h2>
-    <h2>Diamond Price Prediction</h2> <h2>Diamond Price Prediction</h2>
+<body>
+
+    <nav class="navbar navbar-dark bg-dark fixed" >
+        <div class="container-fluid"> 
+          <!-- <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button> -->
+        </div>
+        <a class="navbar-brand" href="/">Home</a>
+              <h3 style="color: white">Diamond Price Prediction</h5>
+        
+             <h6 style=color:white>Created By- Ravi</h5> 
+    
+      </nav>
+    <div align=center>
+    <h1><b>Welcome to Home Page</b></h1>
+    <h2>This Web is Created By-</h2>
+    <h3>Ravi Prakash Yadav  B.tech CSE-B Roll no : 25618</h3>
+    <h3>Mangal Kumar Pandey  B.tech CSE-B Roll no : 25604</h3>
+    <h3>Naveen Raj Goel  B.tech CSE-B Roll no : 25609</h3>
+    <br>
+    <br>
+    <h4>To Predict the price of Diamond</h4>
+    <h2><a href="/predict">Click Here</a></h2>
+
+
+
+  
+</div>
 </body>
 </html>
